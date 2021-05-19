@@ -16,6 +16,7 @@ const config: Phaser.Types.Core.GameConfig = {
     },
   },
   scene: [TitleScene, MapScene, PitScene, WinScene],
+  title: "ET Phone Home",
 };
 
 export default new Phaser.Game(config);

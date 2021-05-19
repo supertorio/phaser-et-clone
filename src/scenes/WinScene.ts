@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 
-export default class ForestScene extends Phaser.Scene {
+export default class WinScene extends Phaser.Scene {
   constructor() {
-    super("map");
+    super("win");
   }
 }
