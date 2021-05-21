@@ -1,8 +1,9 @@
 import Phaser from "phaser";
+import SceneKeys from "~/consts/sceneKeys";
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
-    super("title");
+    super(SceneKeys.Title);
   }
 
   create() {
@@ -15,9 +16,11 @@ export default class TitleScene extends Phaser.Scene {
     this.input.on(
       "pointerdown",
       () => {
-        this.scene.start("Map");
+        this.scene.start(SceneKeys.Forest);
       },
       this
     );
+
+    const area = new Phaser.Geom.Rectangle(64, 64, 672, 472);
   }
 }
