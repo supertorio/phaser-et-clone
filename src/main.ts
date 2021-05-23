@@ -21,8 +21,8 @@ const config: Phaser.Types.Core.GameConfig = {
     },
   },
   scene: [
-    TitleScene,
-    ForestScene,
+    // TitleScene,
+    // ForestScene,
     FieldAScene,
     FieldBScene,
     FieldCScene,

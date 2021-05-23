@@ -13,7 +13,7 @@ export default class FieldCScene extends Phaser.Scene {
     const height = this.scale.height;
 
     drawActionBar(this, width, height);
-    drawMapBar(this, width, height, BackgroundColors.GreenOverflow);
+    drawMapBar(this, width, height, BackgroundColors.GreenMapOverflow);
     drawScoreBar(this, width, height);
   }
 }
