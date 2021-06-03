@@ -1,19 +1,22 @@
-import Phaser from "phaser";
 import SceneKeys from "~/consts/sceneKeys";
 import { BackgroundColors } from "~/consts/Colors";
-import { drawActionBar, drawMapBar, drawScoreBar } from "~/game/mapElements";
+import { drawDiamondWell } from "~/game/mapElements";
+import MapScene from "../MapScene";
 
-export default class FieldCScene extends Phaser.Scene {
+export default class FieldAScene extends MapScene {
+  mapOverflowColor = BackgroundColors.GreenMapOverflow;
+  mapBackgroundColor = BackgroundColors.GreenMap;
+
   constructor() {
     super(SceneKeys.FieldC);
   }
 
   create() {
-    const width = this.scale.width;
-    const height = this.scale.height;
+    this.drawMapBackground();
+    this.drawMapItems();
+  }
 
-    drawActionBar(this, width, height);
-    drawMapBar(this, width, height, BackgroundColors.GreenMapOverflow);
-    drawScoreBar(this, width, height);
+  drawMapItems() {
+    drawDiamondWell(this, 168, 172);
   }
 }

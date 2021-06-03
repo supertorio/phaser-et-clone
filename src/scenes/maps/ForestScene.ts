@@ -1,19 +1,23 @@
-import Phaser from "phaser";
 import SceneKeys from "~/consts/sceneKeys";
 import { BackgroundColors } from "~/consts/Colors";
-import { drawActionBar, drawMapBar, drawScoreBar } from "~/game/mapElements";
+import GameState from "~/consts/GameState";
+import MapScene from "../MapScene";
 
-export default class ForestScene extends Phaser.Scene {
+export default class ForestScene extends MapScene {
+  mapOverflowColor = BackgroundColors.GreenMapOverflow;
+  mapBackgroundColor = BackgroundColors.GreenMap;
+
   constructor() {
     super(SceneKeys.Forest);
   }
 
   create() {
-    const width = this.scale.width;
-    const height = this.scale.height;
+    this.drawMapBackground();
+    this.drawMapItems();
 
-    drawActionBar(this, width, height);
-    drawMapBar(this, width, height, BackgroundColors.GreenMapOverflow);
-    drawScoreBar(this, width, height);
+    console.log(
+      this.registry.get(GameState.LastPosition),
+      this.registry.get(GameState.ExitDirection)
+    );
   }
 }

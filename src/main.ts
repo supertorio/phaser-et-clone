@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 
 import TitleScene from "./scenes/TitleScene";
+import Game from "./scenes/Game";
 import ForestScene from "./scenes/maps/ForestScene";
 import FieldAScene from "./scenes/maps/FieldAScene";
 import FieldBScene from "./scenes/maps/FieldBScene";
@@ -9,6 +10,7 @@ import FieldDScene from "./scenes/maps/FieldDScene";
 import WashingtonScene from "./scenes/maps/WashingtonScene";
 import PitScene from "./scenes/PitScene";
 import WinScene from "./scenes/WinScene";
+import GameUI from "./scenes/GameUI";
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
@@ -21,8 +23,10 @@ const config: Phaser.Types.Core.GameConfig = {
     },
   },
   scene: [
-    // TitleScene,
-    // ForestScene,
+    Game,
+    TitleScene,
+    GameUI,
+    ForestScene,
     FieldAScene,
     FieldBScene,
     FieldCScene,

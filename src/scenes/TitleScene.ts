@@ -1,5 +1,7 @@
 import Phaser from "phaser";
+import MovementDirection from "~/consts/MovementDirection";
 import SceneKeys from "~/consts/sceneKeys";
+import { sceneEvents, SceneEventKeys } from "../events/SceneEvents";
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
@@ -7,7 +9,7 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(80, 560, "Game Title: " + this.game.config.gameTitle, {
+    this.add.text(80, 360, "Game Title: " + this.game.config.gameTitle, {
       font: "16px Courier",
       color: "#fff",
     });
@@ -16,7 +18,12 @@ export default class TitleScene extends Phaser.Scene {
     this.input.on(
       "pointerdown",
       () => {
-        this.scene.start(SceneKeys.Forest);
+        sceneEvents.emit(
+          SceneEventKeys.MoveMap,
+          SceneKeys.Forest,
+          { x: 10, y: 25 },
+          MovementDirection.DOWN
+        );
       },
       this
     );

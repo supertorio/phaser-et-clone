@@ -1,5 +1,7 @@
 enum SceneKeys {
   Preloader = "preloader",
+  GameUI = "gameUI",
+  Game = "game",
   Title = "title",
   Forest = "forest",
   FieldA = "field_a",
